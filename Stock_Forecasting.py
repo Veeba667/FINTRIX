@@ -73,13 +73,11 @@ if selected_ticker and ma_days:
                     low=data['Low'],
                     close=data['Close'])])
 
-    # Update chart layout and appearance
     fig.update_layout(title=f"Candlestick Chart for {selected_ticker}",
                     xaxis_title='Date',
                     yaxis_title='Price',
                     xaxis_rangeslider_visible=False)
 
-    # Display the candlestick chart
     st.plotly_chart(fig, use_container_width=True)
     
     st.write("Moving Average Table (Last 10 Days):")
