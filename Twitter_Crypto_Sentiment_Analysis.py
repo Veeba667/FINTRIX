@@ -13,6 +13,13 @@ def analyze_sentiment(text):
         return "Neutral", analysis.sentiment.polarity
 
 def main():
+    st.set_page_config(
+    page_title="Twitter Crypto Sentiment Analysis",
+    page_icon="💲",
+    layout="wide",
+    initial_sidebar_state="expanded"
+    )
+    
     hide_streamlit_style = """
             <style>
             #MainMenu {visibility: hidden;}
@@ -21,12 +28,6 @@ def main():
             """
     st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
-    st.set_page_config(
-    page_title="Twitter Crypto Sentiment Analysis",
-    page_icon="💲",
-    layout="wide",
-    initial_sidebar_state="expanded"
-    )
             
     st.title("Crypto Sentiment Analysis")
     st.markdown(
