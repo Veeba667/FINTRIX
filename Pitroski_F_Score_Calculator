@@ -16,6 +16,13 @@ def calculatePitroski_F_score(net_income, operating_cash_flow, total_assets, lon
     return fscore
 
 def main():
+    st.set_page_config(
+    page_title="Pitroski's F-score Calculator",
+    page_icon="💯",
+    layout="wide",
+    initial_sidebar_state="expanded"
+    )
+
     hide_streamlit_style = """
             <style>
             #MainMenu {visibility: hidden;}
@@ -23,7 +30,7 @@ def main():
             </style>
             """
     st.markdown(hide_streamlit_style, unsafe_allow_html=True)
-    
+
     st.title("Pitroski F-Score Calculator")
     
     net_income = st.number_input("Net Income")
