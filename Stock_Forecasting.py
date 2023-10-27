@@ -1,7 +1,7 @@
 import pandas as pd
 import yfinance as yf
-import plotly.express as px
 import streamlit as st
+import plotly.express as px
 import plotly.graph_objects as go
 
 
