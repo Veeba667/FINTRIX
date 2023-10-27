@@ -1,7 +1,7 @@
 import streamlit as st
 
 
-def calculatePitroski_F_score(net_income, operating_cash_flow, total_assets, long_term_debt, current_assets, current_liabilities, shares_outstanding):
+def calculatePiotroski_F_score(net_income, operating_cash_flow, total_assets, long_term_debt, current_assets, current_liabilities, shares_outstanding):
     criteria = [
         net_income > 0,
         operating_cash_flow > 0,
@@ -17,7 +17,7 @@ def calculatePitroski_F_score(net_income, operating_cash_flow, total_assets, lon
 
 def main():
     st.set_page_config(
-    page_title="Pitroski's F-score Calculator",
+    page_title="Piotroski's F-score Calculator",
     page_icon="💯",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -31,7 +31,7 @@ def main():
             """
     st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
-    st.title("Pitroski F-Score Calculator")
+    st.title("Piotroski F-Score Calculator")
     
     net_income = st.number_input("Net Income")
     operating_cash_flow = st.number_input("Operating Cash Flow")
@@ -43,12 +43,12 @@ def main():
     
     if st.button("Calculate"):
         try:
-            fscore = calculatePitroski_F_score(net_income, operating_cash_flow, total_assets, long_term_debt, current_assets, current_liabilities, shares_outstanding)
+            fscore = calculatePiotroski_F_score(net_income, operating_cash_flow, total_assets, long_term_debt, current_assets, current_liabilities, shares_outstanding)
         except Exception as ex:
             print('Exception:', ex)
         
-        st.write("### Pitroski F-Score:")
-        st.write(f"The calculated Pitroski F-Score is: {fscore}")
+        st.write("### Piotroski F-Score:")
+        st.write(f"The calculated Piotroski F-Score is: {fscore}")
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     main()
